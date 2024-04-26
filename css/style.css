@@ -1,0 +1,110 @@
+
+
+/* ********** Custom Properties ********** */
+
+:root{
+    --first-color: rgb(217, 0, 98);
+    --first-alpha-color: rgba(217, 0, 98, 0.75);
+    --second-color: rgb(20, 25, 45);
+    --second-alpha-color: rgba(20, 25, 45, 0.75);
+    --third-color: rgb(80, 20, 100);
+    --third-alpha-color: rgba(80, 20, 100, 0.75);
+
+    --link-color: rgb(80, 158, 227);
+    --link-color: rgb(110, 168, 254); /*mdo*/
+    --link-color: rgba(110, 168, 254, 0.75); /*el 'alpha' quizá lo aplique en el estado 'hover'*/
+
+    --bg-color: rgb(245, 245, 245);
+    --bg-alpha-color: rgba(245, 245, 245, 0.75);
+}
+
+/* ********** Reset Styles ********** */
+
+body{
+    font-family: "Raleway", sans-serif;
+}
+/* ********** Bootstrap Styles ********** */
+
+.bg-secondary{
+  background-color: var(--second-color) !important;
+}
+.navbar-brand img{
+  height: 3rem; /*equivale a 48px*/
+  width: auto;
+}
+
+.navbar-dark .navbar-toggler{
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  transition: all 0.3s ease-out;
+}
+.navbar-dark .navbar-toggler:hover{
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28217, 0, 98, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  opacity: 0.75;
+}
+
+.nav-item{
+  /* margin-left: ; */
+  padding-left: 0.5rem;
+  transition: all 0.3s ease-out;
+}
+
+.nav-item:hover{
+  background-color: var(--first-alpha-color);
+}
+
+.nav-link {
+  color: var(--first-color);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.nav-link:hover{
+  color: var(--bs-white); /*esta variable es de bootstrap*/
+}
+/* ********** My Styles ********** */
+
+
+
+
+
+
+
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900
+
+.raleway-<uniquifier> {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+
+
+
+
+/* // X-Small devices (portrait phones, less than 576px)
+    // No media query for `xs` since this is the default in Bootstrap */
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .nav-item:hover {
+    background-color: transparent;
+  }
+}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) {
+}
