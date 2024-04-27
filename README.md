@@ -368,4 +368,26 @@ ve que no tiene el borde del boton ¿como le quito ese borde al _navbar-toggler_
 
 por el padding el submenú tiene unos errores.
 
-##
+## Aplicando estilos al submenú
+
+recuerda que le aplicamos un _padding-left_ a los `<li>` para que se alejaran un poco.
+
+Quizá lo que nos combiene es aplicar _margin_ pero al enlace que está dentro de las `<li>`s para que las `<li>`s  no se muevan y por ende no se me muevan las `<li>` que estan alineadas dentro del _dropdawn-list_ 
+
+```css
+
+```
+al ya no aplicar el _padding-left_ al `<li>` ya no se me encima ese color rosa
+
+a nivel de color tambien manejamos una jerarquia.
+
+los que están en color al 100% son los enlaces principales
+
+y para el submenú manejamos el color `--first-alpha-color`
+
+Tampoco vamos a aumentarle el tamaño de la letra para que visualmente haya una jerarquia
+
+Le aplicamos una transicion
+
+
+

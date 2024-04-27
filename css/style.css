@@ -28,6 +28,18 @@ body{
 .bg-secondary{
   background-color: var(--second-color) !important;
 }
+
+.dropdown-item {
+  color: var(--first-alpha-color);
+  font-weight: bold;
+  /* transition: all 0.8s ease-out; */
+}
+.dropdown-item:hover {
+  color: var(--bs-white);
+  background-color: var(--first-alpha-color);
+  transition: all 0.3s ease-out;
+}
+
 .navbar-brand img{
   height: 3rem; /*equivale a 48px*/
   width: auto;
@@ -43,8 +55,8 @@ body{
 }
 
 .nav-item{
-  /* margin-left: ; */
-  padding-left: 0.5rem;
+  /* margin-left: 0.5rem; */
+  /* padding-left: 0.5rem; */
   transition: all 0.3s ease-out;
 }
 
@@ -56,6 +68,7 @@ body{
   color: var(--first-color);
   font-size: 1.25rem;
   font-weight: bold;
+  margin-left: 0.5rem;
 }
 
 .nav-link:hover{
