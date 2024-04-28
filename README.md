@@ -375,7 +375,16 @@ recuerda que le aplicamos un _padding-left_ a los `<li>` para que se alejaran un
 Quizá lo que nos combiene es aplicar _margin_ pero al enlace que está dentro de las `<li>`s para que las `<li>`s  no se muevan y por ende no se me muevan las `<li>` que estan alineadas dentro del _dropdawn-list_ 
 
 ```css
-
+  .dropdown-item {
+  color: var(--first-alpha-color);
+  font-weight: bold;
+  /* transition: all 0.8s ease-out; */
+  }
+  .dropdown-item:hover {
+    color: var(--bs-white);
+    background-color: var(--first-alpha-color);
+    transition: all 0.3s ease-out;
+  }
 ```
 al ya no aplicar el _padding-left_ al `<li>` ya no se me encima ese color rosa
 
@@ -389,5 +398,27 @@ Tampoco vamos a aumentarle el tamaño de la letra para que visualmente haya una 
 
 Le aplicamos una transicion
 
+## Aplicando estilos al menú para desktop
+
+tendriamos que cambiar el color de fondo al hover (es como un boton de los años 2000). en la media query
+
+```css
+  @media (min-width: 992px) {
+  .nav-item:hover {
+    background-color: transparent;
+  }
+}
+```
+si ustedes saben css le van a sacar mucho provecho a bootstrap.
+
+## código HTML del pié de página
+
+el footer se comporta de la misma manera que la cabecera
+
+vena que los iconos se van espaciando (lo resolvemos con flexbox)
+
+vean que está dentro de un contenedor 
+
+para incorporar iconos usé esta etiqueta `<i class="bi-alarm"></i>`
 
 
