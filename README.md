@@ -419,6 +419,35 @@ vena que los iconos se van espaciando (lo resolvemos con flexbox)
 
 vean que está dentro de un contenedor 
 
-para incorporar iconos usé esta etiqueta `<i class="bi-alarm"></i>`
+para incorporar iconos usé esta etiqueta `<i class="bi bi-instagram"></i>`
+
+el nombre de los iconos de las redes sociales por defecto es el nombre mismo de dicha red social.
+
+Un tip, si le ponene m.me/(ya sea una página o el nombre de un perfil válido en messenger) les abre una conversación en mesenger
+
+para whatsapp usamos la siguiente api.
+
+> `<a href="https://api.whatsapp.com/send?phone=59176503020" target="_blank">`
+
+si el usuario está usando la interfaz de _whatsapp_ en su computadora en el mobil le abriria la comversacion en la aplicación de _whatsapp_ 
+
+```html
+  <footer class="bg-dark text-white">
+      <nav class="">
+        <!-- a[href="https://.com"][target="_blank"]*7>i.bi.bi- -->
+        <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://m.me/diegotvramos" target="_blank"><i class="bi bi-messenger"></i></a>
+        <a href="https://api.whatsapp.com/send?phone=59176503020" target="_blank"><i class="bi bi-whatsappk"></i></a>
+        <a href="https://.com" target="_blank"><i class="bi bi-"></i></a>
+      </nav>
+      <small>&copy; 2024 diseñado por 🐾Manchas🐾 y <a href="https://github.com/diegotvramos" target="_blank">@diegotvramos</a> </small>
+      
+    </footer>
+```
+
+## Codigo CSS del pié de página
 
 
