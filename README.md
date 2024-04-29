@@ -432,8 +432,8 @@ para whatsapp usamos la siguiente api.
 si el usuario está usando la interfaz de _whatsapp_ en su computadora en el mobil le abriria la comversacion en la aplicación de _whatsapp_ 
 
 ```html
-  <footer class="bg-dark text-white">
-      <nav class="">
+  <footer class="bg-dark">
+      <nav class="d-flex justify-content-around">
         <!-- a[href="https://.com"][target="_blank"]*7>i.bi.bi- -->
         <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
         <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
@@ -443,11 +443,94 @@ si el usuario está usando la interfaz de _whatsapp_ en su computadora en el mob
         <a href="https://api.whatsapp.com/send?phone=59176503020" target="_blank"><i class="bi bi-whatsappk"></i></a>
         <a href="https://.com" target="_blank"><i class="bi bi-"></i></a>
       </nav>
-      <small>&copy; 2024 diseñado por 🐾Manchas🐾 y <a href="https://github.com/diegotvramos" target="_blank">@diegotvramos</a> </small>
+      <!-- a {Studio Corvus} -->
+      <small class="text-white">&copy; 2024 diseñado por 🐾Manchas🐾 y <a href="https://github.com/diegotvramos" target="_blank">@diegotvramos</a> </small>
       
     </footer>
 ```
 
 ## Codigo CSS del pié de página
+
+este sitio es inspiración de [Studio Corvus](https://www.studiocorvus.com/) 
+
+El contenido del `footer` lo vamos a meter a un contenedor (para delimitar el contenido)
+
+Vamos a dar estilos a los enlaces.
+
+¿como logro centrar y espaciar los elementos?
+
+
+la **propiedad** `justify- content` nos permite repartir el espacio en el eje transversal (me refiero al horizontal) nos comviene el **valor** `space-evenly` por que si considera las orillas
+
+y centramos el texto. pero recuerda que la etiqueta `<small>` es una etiqueta de linea(solo ocupa el espacio que requiere) entonces la clase `text-center` se lo aplicamos a su contenedor padre `container`
+
+el texto y los iconitos están muy pegaditos entonces le puedo aplicar un _padding_ ala etiqueta `<footer>` 
+
+![padding-footer](/assets/padding-footer.JPG)
+
+vamos hacer un poco mas grande los enlaces (los iconos) por que están muy pequeños
+
+>> yo lo podria hacer con un `h4` o el tamañod `display`
+
+pero se lo tendria que agregar a cada iconito la clase `fs-4`(son responsivas)
+
+> `https://getbootstrap.com/docs/5.3/utilities/text/#font-size`
+
+> **Para buscar las clases en Bootstrap** busca por el nombre completo de la propiedad CSS, así  _margin top_, _Font size_, _margin padding_
+
+
+```html
+  <footer class="bg-dark p-3">
+      <div class="container text-center">
+
+        <nav class="d-flex justify-content-evenly border-bottom border-secondary mb-2 pb-2">
+          <!-- a[href="https://.com"][target="_blank"]*7>i.bi.bi- -->
+          <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube fs-4"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="https://m.me/diegotvramos" target="_blank"><i class="bi bi-messenger fs-4"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=59176503020" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+          <!-- <a href="https://.com" target="_blank"><i class="bi bi-"></i></a> -->
+        </nav>
+        <small class="text-white">
+          &copy; 2024 diseñado por 🐾Manchas🐾 y <a href="https://github.com/diegotvramos" target="_blank">@diegotvramos</a>
+        </small>
+        
+      </div>
+    </footer>
+```
+
+## Fijando la barra de navegación
+
+Al poner 50 `<br>` nuestra barra de navegación se pierde.
+
+¿Como la podemos volver fija?
+
+> `https://getbootstrap.com/docs/5.3/components/navbar/#placement`
+
+>> la podemos _fixed_(fijar) arriba, abajo y tambien dejar la de manera _sticky_(pegajosa) arriba y abajo
+
+>> `fixed-bottom` tapa el pie de página, por que está posicionado de manera fija y además (en versión mobile hace salir una lina blanca abajo), la posicion _fixed_ sale de la disposicion del html por eso tapa el contenido que está inmediatamente abajo de él 
+
+entonces yo prefiero:
+
+>> `sticky-top` es una mescla entre posicionamiento relativo y posicionamiento fijo y no tapa el texto
+
+`<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-secondary">`
+
+Con esto ya tenemos las secciones comunes, ahora toca generar el `Html` de cada una de las secciones esto lo vamos hacer de forma repetitiva por que solo estamos utilizando html y css.
+
+podemos tomar el codigo fuente de este sitio y lo modifiquemos con php y con algun _statik site genrator_ para genrár el código de manera mas agil.
+
+## Generando los archivos HTML de cada sección 
+
+a la etiqueta `<main>` aplicamos un poco de _padding_ para que se separe un poco de la cabecera 
+
+y ya que tenemos el template index lo copiamos para cada una de las secciones. 
+
+> No olvides cambiar el título de las `<h1>`
+
+## 
 
 
