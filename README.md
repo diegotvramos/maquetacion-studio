@@ -543,4 +543,133 @@ vamos a trabajar esta primera seccion
 
 ponemos un color de fondo propio
 
+así 
+
+```css
+  .bg-gradient-blue-green{
+  background-color: rgba(83, 184, 152, 1);
+  /* background-image: linear-gradient(
+    135deg,
+    rgba(47, 145, 224, 0.91),
+    rgba(7, 31, 51, 0.97) 79%
+    ); */
+  background-image: linear-gradient( /*tu decides cual aplicar*/
+    131deg,
+    rgba(28, 118, 173, 0.92),
+    rgba(83, 184, 152, 1)
+);
+background-image: linear-gradient(
+    131deg,
+    rgba(159, 0, 217, 0.92),
+    rgba(83, 184, 152, 1) 
+);
+}
+```
+si observas ve que el contenido tiene un espaciado a los lados(está delimitado), eso quere decir que está dentro de un `.container
+
+hay dos secciones, cada una tiene 4 elementos. usamos la disposicion responsiva de Bootstrap `https://getbootstrap.com/docs/5.3/layout/grid/`
+
+el boton del primer elemento de la seccion 1 es un enlace que tiene la forma de un boton que nos lleva a la seccion de servicios _(call-to-actions)_
+
+no olvides poner el id `#servicios` 
+
+>> solo puede haver un nombre de `id` único
+
+ponemos la imagen. pero si la imagen es grande, desborda el tamaño de el container que contiene a flexbox.
+
+## Estilos CSS del home
+
+lo primero que vamos a agregar es que las imagenes sean responsivas. y evitemos el tipico _scroll_ horizontal
+
+> En el buscador de _Bootstrap_ vamos a poner: 'responsive image' y copiamos esta clase `.img-fluid.` que aplica un ancho del 100% de su contenedor `max-width: 100%; and height: auto;`
+
+El color de texto está en color blanco, entonces aplicamos la clase `text-white` a toda la fila.
+
+mira que el tamaño de la fuente de los parrafos es un poco mas grande, podemos usar el 'font-size' de Bootstrap  aplicamos ala etiqueta `<p>` la clase `fs-5`
+
+damos estilos al anlace que parece boton 'bottons' con N
+ 
+pueden ser botones `buttons`, pueden ser inputs, y pueden ser enlaces y le aplicamos la clase `btn btn-success`
+
+```css
+  
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #0d6efd;
+  --bs-btn-border-color: #0d6efd;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-hover-border-color: #0a58ca;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #0a58ca;
+  --bs-btn-active-border-color: #0a53be;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #0d6efd;
+  --bs-btn-disabled-border-color: #0d6efd;
+}
+```
+
+tambien le aplicamos la clase negrita al boton 'bold' `https://getbootstrap.com/docs/5.3/utilities/text/#font-weight-and-italics`
+
+> tip el color de fondo debes hacerlo con el color original del monitor, osea desactivar por un momento proteccion a la vista.
+
+la clase `row` está maquetada con flexbox entonces podemos activar la propiedad `order`
+
+![flex-order](/assets/flex-order.JPG)
+
+te puedes guiar de la documentacion de bootstrap. `https://getbootstrap.com/docs/5.3/utilities/flex/#order`
+
+lo que quiero es pasar el elemento del texto a la columna 2
+
+Por defecto el valor del ``order`` es `0` por que en _Flexbox_ todo los elementos comienzan con `0`
+
+```html
+ <article class="col-12 col-lg-5 order-lg-1">
+            <h2>Sitios web responsivos</h2>
+            <p class="fs-5">Es importante proporcionar a tus visitantes una experiencia web óptima en dispositivos móviles. El diseño web responsivo significa que tu sitio se adapta instantáneamente al dispositivo que el visitante utiliza. ¡Mi trabajo es hacer, que la visita de tus usuarios sea lo más agradable e intuitiva para ellos!</p>
+          </article>
+```
+
+
+con esto el párrafo pasaria a la segunda columna en el tamaño `LG`
+
+tenemos que alinear al centro en el eje transversal osea en la 'Y'
+
+¿Usamos `align items` o `Align content`?
+
+me funcionó el `Align-items:center;` ¿Por qué? como mi flexbox está en fila(por defecto) 
+
+La alineación de los elementos en el eje transversal se logra con la _align-items_ propiedad del contenedor flexbox o _align-self_ con la propiedad de los elementos individuales. En el caso de un contenedor flexbox de varias líneas, con espacio adicional en el eje transversal, puede utilizarlo ``align-content`` para controlar el espaciado de las filas.
+
+```html
+  <section class="row text-white align-items-lg-center">
+          <!-- tengo 4 elementos -->
+          <!-- <article class="col-12 col-lg-5 align-content-lg-center"> -->
+          <article class="col-12 col-lg-5">
+            <h2>¿Necesitas un sitio web increíble?</h2>
+            <p class="fs-5">Un sitio hermoso, moderno, responsivo y personalizado para tu compañia, negocio, marca, servicio o producto.</p>
+            <a class="btn btn-success fw-bold" href="#servicios">¡Sí, empecemos !</a>
+          </article>
+          <article class="col-12 col-lg-7">
+            <img class="img-fluid" src="img/header-image.png" alt="¿Necesitas un sitio web increíble?">
+          </article>
+          <article class="col-12 col-lg-5 order-lg-1">
+            <h2>Sitios web responsivos</h2>
+            <p class="fs-5">Es importante proporcionar a tus visitantes una experiencia web óptima en dispositivos móviles. El diseño web responsivo significa que tu sitio se adapta instantáneamente al dispositivo que el visitante utiliza. ¡Mi trabajo es hacer, que la visita de tus usuarios sea lo más agradable e intuitiva para ellos!</p>
+          </article>
+          <article class="col-12 col-lg-7 ">
+            <img class="img-fluid" src="img/header-image-2.png" alt="Sitios web responsivos">
+          </article>
+        </section>
+```
+
+> los _containers_ en bootstrap 5 han cambiado de proporcion, por eso se ve mas amplio el nuestro
+
+## 
+
+
+
+
 
