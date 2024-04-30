@@ -531,6 +531,16 @@ y ya que tenemos el template index lo copiamos para cada una de las secciones.
 
 > No olvides cambiar el título de las `<h1>`
 
-## 
+## Maquetando HTML del home
+
+hacemos un análisis del contendido a maquetar, tanto para la version mobil y para la version descktop.
+
+Podemos ver que el fondo de la seccion tiene un degradado
+
+vamos a trabajar esta primera seccion
+
+![seccion-home](/assets/seccion-home.JPG)
+
+ponemos un color de fondo propio
 
 

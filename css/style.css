@@ -35,6 +35,10 @@ a:hover {
 
 /* ********** Bootstrap Styles ********** */
 
+.bg-dark{
+  background-color: var(--second-color) !important;
+}
+
 .bg-secondary{
   background-color: var(--second-color) !important;
 }
@@ -86,6 +90,32 @@ a:hover {
 }
 /* ********** My Styles ********** */
 
+.bg-gradient-blue-green{
+  background-color: rgba(83, 184, 152, 1);
+  /* background-image: linear-gradient(
+    135deg,
+    rgba(47, 145, 224, 0.91),
+    rgba(7, 31, 51, 0.97) 79%
+    ); */
+  background-image: linear-gradient( /*tu decides cual aplicar*/
+    131deg,
+    rgba(28, 118, 173, 0.92),
+    rgba(83, 184, 152, 1)
+);
+background-image: linear-gradient(
+    131deg,
+    rgba(159, 0, 217, 0.92),
+    rgba(83, 184, 152, 1) 
+);
+}
+
+
+
+
+
+/* .bg-gradient-blue-green {
+  background: linear-gradient();
+} */
 
 
 
