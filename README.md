@@ -639,9 +639,25 @@ tenemos que alinear al centro en el eje transversal osea en la 'Y'
 
 ¿Usamos `align items` o `Align content`?
 
+Esta documentacion explica mejor.
+
+>> `https://developer.mozilla.org/en-US/docs/Web/CSS/align-items`
+
+>> `https://developer.mozilla.org/en-US/docs/Web/CSS/align-content`
+
 me funcionó el `Align-items:center;` ¿Por qué? como mi flexbox está en fila(por defecto) 
 
 La alineación de los elementos en el eje transversal se logra con la _align-items_ propiedad del contenedor flexbox o _align-self_ con la propiedad de los elementos individuales. En el caso de un contenedor flexbox de varias líneas, con espacio adicional en el eje transversal, puede utilizarlo ``align-content`` para controlar el espaciado de las filas.
+
+La imagen definitiva para enterter el eje transversal. Si el orden está en fila, el eje (main) principal estária en el eje X y el eje transversal seria el eje Y
+
+ahora si el orden está en fila(columna) el eje principal está en el eje Y y el eje transversal pasaria a ser el eje X
+
+![definitiva-cros](/assets/definitiva-transversal.png)
+
+![ejex-flexbox](/assets/ejes-flexbox.JPG)
+
+
 
 ```html
   <section class="row text-white align-items-lg-center">
@@ -667,9 +683,59 @@ La alineación de los elementos en el eje transversal se logra con la _align-ite
 
 > los _containers_ en bootstrap 5 han cambiado de proporcion, por eso se ve mas amplio el nuestro
 
+## Maquetación HTML de cards del home
+
+Vamos a ver como está el responsive de las targetitas
+
+En tamaño `LG` está a 4 en fila
+
+En tamaño `SM` está a 2 
+
+En Mobil esta a 1
+
+Dentro de la seccion, creamos 4 _articles_ 
+
+Buscamos en Bootstrap 🔍 'card' y copiamos el código de la primera targeta ejemplo.
+
+```html
+  <section id="servicios" class="row min-vh-100 align-items-lg-center">
+          <article class="col-12 col-sm-6 col-lg-3">
+            <div class="card p-3 " style="width: 18rem">
+              <img src="img/icon-sites.png" class="card-img-top" alt="Sitio web nuevo">
+              <div class="card-body">
+                <h5 class="card-title">Sitio web nuevo</h5>
+                <p class="card-text">¿Necesitas un sitio web (nuevo) y 100% responsivo?</p>
+                <a href="sitios.html" class="">
+                  Más detalles
+                  <i class="bi bi-chevron-double-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+  </section>
+```
+
+le ponemos un _title_, tambien le ponemos una _description_
+
+Esos links son _call to actions_ hacia la seccion: SITIOS, CLIENTES, COMENCEMOS, CONTACTO
+
+Más detalles lleva una flechita y lo buscamos en los iconos de bootstrap llamada 🔍 chevro 🔍
+
+ve que el tamaño de la imagen está ocupando el tamaño de la pantalla (bootstrap trae unas clases que controla el viwport)
+
+Toda la seccion ocupa una altura minima de 100vh utilizamos la clase `min-vh-100`
+![min-vh-100](/assets/min-vh-100.JPG)
+
+¿como lo centro?
+
+> Recuerda que la `<section class="row">` está maquetada con flexbox 
+
+> `<section id="servicios" class="row min-vh-100 align-items-lg-center">`
+
+¿Por qué `LG`?
+
+seamos sinceros en el movil no me interesa que esté centrado por que en mobil va ir una tras de la otra
+
 ## 
-
-
-
 
 
