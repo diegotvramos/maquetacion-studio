@@ -736,6 +736,122 @@ Toda la seccion ocupa una altura minima de 100vh utilizamos la clase `min-vh-100
 
 seamos sinceros en el movil no me interesa que esté centrado por que en mobil va ir una tras de la otra
 
+## Estilos CSS de las cards del home
+
+vamos a crear una clase propia para pegar como fondo a las imágenes PNG. Y como el color de la imagen PNG es blanca se va notar mejor.
+
+modificamos el contenido de las cards que faltan, para la propiedad `alt=""` ponemos el mismo nombre del title de la card
+
+
+
+![no-centrada](/assets/no-centrada.JPG)
+
+ve que no está centrada
+
+¿como lo centro? yo creo que hay que manejar márgenes laterales para que la card se pueda distribuir 
+
+> le aplicamos un `margin auto` a los laterales (¿recuerdas las clases auxiliares de Bootstrap?)
+
+> `https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding` DOC.
+
+> `me-auto ms-auto `(margin end {e}) (margin start{s}) o puede usar la clase:
+
+> `mx-auto` _``x`` - for classes that set both *-left and *-right_
+
+![centrado-perfecto](/assets/centrado-perfecto.JPG)
+
+con eso conseguimos el centrado perfecto 
+
+¿Como hago para separarla un poco en version movil?
+
+de igual manera voy a usar un `margin-botton`. P
+
+Para que la seccion se separe de la seccion de arriba voy a aplicar un 
+
+> `mb-5` pero a la seccion de `row` osea arriba. `<section class="row text-white align-items-lg-center mb-5">`
+
+![comparativa](/assets/comparativa.JPG)
+
+eso hace que se separe ambas secciones
+
+
+tenemos un pequeño problema.
+
+![muy-pegados](/assets/muy-pegados.JPG)
+
+
+las targetas estan muy pegadas en tamaño pc ¿como logro un poco de separación entre las targetas?
+
+**conociendo como funciona CSS**
+
+modelo de maquetación de flexbox
+
+Cuando aplicas _display-flexbox_ a un elemento por defecto a los elementos hijos, el padre flexible ignora la propiedad del ancho o del alto dependiendo la direccion del flexbox
+
+osea adapta el contenido al tamaño que requiera.
+
+¿que pasa si al `<article>` que es la columna que contiene a la card yo le aplico la clase ``d-flex``? le vuelvo un elemento flexible y por defecto su hijo que es una _card_ lo que hace que se adapte al **tamaño de las imágenes** lo cual hace que incluso se vean más orgánicos, 
+
+está ignorando el `style="width: 18rem"` de la card
+
+a las columnas las volvemos contenedores flex.
+
+`<article class="col-12 col-sm-6 col-lg-3 d-flex">`
+
+![aplicando-d-flex](/assets/aplicando-d-flex.JPG)
+
+mira lo que pasa si ponemos `min-vh-100` en tamaño tableta, toda las cards se alargan hasta llenar la el 100 de la altura de la pantalla.
+
+![min-vh-1000](/assets/min-vh-1000.JPG)
+
+podemos observar que ocupa el 100 de la pantalla
+
+![vista](/assets/vista-min-vh-100.JPG)
+
+mira lo que pasa si ponemos `max-vh-100` en tamaño tableta, toda las cards se ponen en su tamaño mas original
+
+![max-vh-1000](/assets/max-vh-1000.JPG)
+
+
+lo **solucioné** 😊 con esta clase ya que esta clase aliniea los elementos al centro del eje `Y` (ye)
+
+
+> `align-items-sm-center` donde `SM` representa el tamaño de la tableta.  asi mentengo el `min-vh-100` para que ocupe toda la pantalla
+
+resultado: 
+
+`<section id="servicios" class="row min-vh-100 align-items-lg-center align-items-sm-center ">`
+
+![align-items-center](/assets/align-items-center.JPG)
+
+
+**`align-content: center;`**
+
+resultado con: `align-content-sm-center` por que esta clase le viene como anillo al dedo por que son mas de 2 filas de contenido   fijate en el ejemplo que pone  **CSS Flexbox Cheatsheet**
+
+![align-content-center](/assets/align-content-center.JPG)
+
+
+con `align-items-lg-center` en PC ve que está desalineado
+
+![align-items-center-pc](/assets/align-items-center-en-pc.JPG)
+
+**`align-content-lg-center`**
+
+mira que con eso se alinean perfectamente.
+
+![alig-content-center-en-pc](/assets/align-content-center-en-pc.JPG)
+
+
+creamos una clase para el color del link y lo agregamos a la clase de la etiqueta `<a>`, creo que no lo usaré
+
+```css
+  .text-third {
+  color: var(--third-color);
+}
+```
+
 ## 
+
 
 

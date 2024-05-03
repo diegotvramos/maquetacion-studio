@@ -119,6 +119,14 @@ background-image: linear-gradient(
 );
 }
 
+.bg-third-color{
+  background-color: var(--third-color);  
+}
+
+.text-third {
+  color: var(--third-color);
+}
+
 
 
 
