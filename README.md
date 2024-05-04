@@ -851,7 +851,48 @@ creamos una clase para el color del link y lo agregamos a la clase de la etiquet
 }
 ```
 
-## 
+## Estructurando las subsecciones de sitios
+
+otro sitio? `https://bad-dog.netlify.app/#interesado`
+
+Ve que el color de fondo es gris, entonces voy a crear una clase css para el _background_
+
+```css
+  .bg-color {
+    background-color: var(--bg-color);
+  }
+```
+
+y se lo agregamos a la etiqueta `<main class="pt-5 bg-color">`
+
+Vamos a tener 3 secciones de contenido, dichas secciones ya tienen un nombre de _id_ 
+
+Quiero centrar la atención del usuario al contenido que estoy mostrando, así que no quiero que se vea parte de la otra seccion.
+
+¿como lo resuelvo?
+
+le damos la anchura del view port y esto lo aplicamos a las 3 secciones. con la clase `min-vh-100`
+
+```html
+  <main class="pt-5 bg-color">
+      
+      <section id="ultimos-proyectos" class="min-vh-100"></section>
+      <section id="single-page" class="min-vh-100"></section>
+      <section id="multi-page" class="min-vh-100"></section>
+  
+    </main>
+```
+como la seccion de **Sitios** apunta directamente a un _id_ lo cual hace que lo ponga al inicio y la barra de navegación lo tapa.
+
+podriamos aplicarla la clase de _padding-top_ pero como vamos a hacer un carrusel y una hero image(a pantalla completa y vamos a centrar el contenido) quiza no lo necesitemos
+
+aveces me arrepiento de unas cosas, regreso, seamos sinceros asi es como ustedes en el día a día van a estar maquetando y desarrollando sus proyectos, cometiendo errores regresando a cosas que habian hecho corrigiendo al final es **prueba y error** 
 
 
+## Código HTML del carrusel de sitios
 
+Ve que tiene un encabezado de nivel 1. entonces ponemos el título `<h1>`y el parrafo `<p>` descriptivo, lo centramos. 
+
+cambiamos el tamaño de fuente(letra) con la clase `fs-5` de bootstrap
+
+En bootstrap buscamos 🔍 carrusel
