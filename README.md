@@ -896,3 +896,230 @@ Ve que tiene un encabezado de nivel 1. entonces ponemos el título `<h1>`y el pa
 cambiamos el tamaño de fuente(letra) con la clase `fs-5` de bootstrap
 
 En bootstrap buscamos 🔍 carrusel
+
+```html
+  <section id="ultimos-proyectos" class="min-vh-100 d-flex">
+          <div class="flex-column align-content-center">
+            <div class="text-center">
+              <h1>Ultimos Proyectos</h1>
+              <p class="fs-5">
+                Desarrollo sitios de una sóla y de múltiples páginas 100% responsivos
+              </p>
+            </div>
+              <!-- autoplay -->
+              <!-- para que no se tape en tamaño pc le di un ancho(witht) del 50% y  para centrar use un marginX automatico -->
+              <div id="carouselExampleAutoplaying" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+
+                <!-- Añadí este bloque y ademas igualé el nombre de los id hijos a el id padre  creo que la clase que lo hace autoplay es: 'data-bs-ride="carousel"'-->
+
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/work-slide-1.jpg" class="d-block w-100" alt="work-slide-1">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/work-slide-2.jpg" class="d-block w-100" alt="work-slide-2">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/work-slide-3.jpg" class="d-block w-100" alt="work-slide-3">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/clients-7.jpg" class="d-block w-100" alt="work-slide-3">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+          </div>
+        
+        </section>
+```
+
+para centrar el contenido cuando se haga click en la seccion 'ultimos proyectos' usé `d-flex` todo lo puso en una sola fila entonces usé la clase `flex-column` para que lo ordene en columnas y por ultimo usé `align-content-center` para centrar el contenido ya que está ocupando el 100% de la pantalla
+
+```html
+<section id="ultimos-proyectos" class="min-vh-100 d-flex">
+          <div class="flex-column align-content-center">
+           </div>
+</section>            
+```
+
+hay un pequeño detalle, ve que el contenido se tapa.
+
+![contenido-tapado](/assets/tapa-contenido.JPG)
+
+lo solucioné usando un ancho _width 50%_ `w-50` se ve pequeño en celular pero es lo que se puede hacer por el momento.
+
+![width](/assets/width-50.JPG)+
+
+
+pero en tamaño mobil el carusel a `50%` es muy pequeño. asi que tube que usar media querys para cambiar el valor de esta clase.
+
+```css
+.mw-100 {
+  max-width: 100% !important;
+}
+
+@media (min-width: 576px) {
+  .mw-100{
+    width: 75% !important;
+  }
+}
+
+
+@media (min-width: 992px) {
+  .mw-100{
+    width: 50% !important;
+  }
+  }
+```
+
+
+y margenes automaticos `mx-auto`en el eje x para centrar el carrucel.
+
+cuando pongo una imagen mas grande como que se desborda y ya no funciona el carrucel. demas no olvides modificar estos valores.
+
+```html
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="4" aria-label="Slide 5"></button>
+```
+
+ojo si ustedes trabajan con frameworks como Bootstrap que es copiar pegar y modificar código fijate como está estructurado el carusel.
+
+Si cambian el nombre de Id pues simplemente hagan referencia de que en el atributo del boton `data-bs-target=""` pues tengan el mismo id que seria el control de atras y adelante
+
+ve que la primera imagen tiene la clase `active` y solo lo tiene ese elemento, y si lo ponen a dos elementos practicamente van a copiar al carusel por que va dejar de funcionar, la clase `active` es la que le indica que imagen es la primera que va cargar dentro del carusel y esto lo toma la programación JS de Bootstrap.
+
+## Modificando el color de las flechas del carrusel.
+
+analicemos el codigo html de el carucel
+
+ve que las flechitas se ayudan de un _background-image_ 
+
+formada por una _data_image_ mediante un formato vectorial la flechita de la imagen .
+
+si buscamos al clase : `"carousel-control-prev" ` de...
+
+
+```html
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+  
+  </button>
+```
+
+
+```css
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e") /*rtl:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e")*/;
+}
+
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") /*rtl:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e")*/;
+}
+```
+
+¿Cuál seria el color de esto: `%23fff'`?
+
+> pues el `fff`; por que el %23 es la codificacion de el #(hashtac) en el _data-image
+
+> comvertimos esto ``rgba(217, 0, 98, 0.75) ``=> codigo hexadecimal `#d90062bf`
+
+y cambiamos el color con el codigo hexadecimal convertido así: ` fill='%23d90062bf'%3e%3cpath `
+
+## Creando un Hero Image dinámico
+
+Primero empecemos por la construccion del html de esta seccion
+
+minimizamos la anterior seccion.
+
+Le voy agregar tanto a la seccion _single-page_ como a la sección _multi-page_ la clase `bg-hero-image` por que a travez de esa clase vamos a  poner la imagen de fondo 
+
+¿como vamos a lograr poner la imagen de fondo?
+
+en mi hoja de estilos en la seccio de estilos propios _My Styles_ 
+
+creamos la siguiente clase con estos estilos:
+
+```css
+  .bg-hero-image{
+    background-image: var(--bg-image); /*esta variable no está declarada en el Root*/
+    background-repeat: no-repeat; /*para que no se repita el fondo*/
+    background-size: cover;
+  }
+```
+voy a usar la tecnica de
+
+```html
+  <section id="single-page" class="min-vh-100 bg-hero-image" style="--bg-image: url(../img/site-singlepage.jpg)">
+        <h2><i>Single Page</i></h2>
+  </section>
+```
+
+> el atributo `style` lo voy a utilizar para declarar el valor de esa variable '_--bg-image_' que he asignado a este selector (clase): `.bg-hero-image{}`
+
+> ¿Qué es un selector? `https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors#tipos_de_selectores`
+
+si no usara esta tenica usariamos dos selectores distintos para cada _heroimage_ 
+
+entonces con esta tecnica volvemos mas dinamico esta clase llamada `.bg-hero-image{}`
+
+No estigmatisen siempre el atributo 'Style' cuando pasas variables css a travez del atributo 'style' puedes volver a un selector CSS ¡Dinámico! por que ya no necesito crear un selector de imagenes para cada seccion
+
+## Aplicando estilos al Hero Image
+
+la primera hero-image (imagen de fondo) está al 100% del contenido, pero si escribimos contenido no es legible(no se aprecia la visibilidad del texto) debido a las partes oscura de la imagen
+
+Entonces hay que ponerle una capa de opacidad 
+
+entonces ala etiqueta `<article>` le ponemos un color de fondo con transparencia
+
+ademas le estoy poniendo un blur(difuminacion): 
+
+![blur-article](/assets/blur-article.JPG)
+
+ademas tiene que heredar el tamaño de su contenedor padre, entonces aplicamos la siguiente clase:
+
+`<article class="bg-alpha-color min-vh-100">`
+
+Una de las caracteristicas de _hero-image_ es que el contenido va centrado
+
+mira que el contenido está fluyendo al 100% pero el resultado final del sitio podemos ver que el contenido está dentro de un contenedor `.container`, por que no revasa el contenido de la cabecera. y este container ser el unico hijo de esté `<article>` y puedo aplicar la clase `d-flex` para centrarlo en el eje `Y` uso la siguiente clase `align-items-center`
+
+```html
+  <article class="bg-alpha-color min-vh-100 d-flex align-items-center ">
+          <div class="container">
+            <h2><i>Single Page</i></h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus ipsa ipsum tenetur minus laboriosam nisi fugiat culpa voluptatem atque, veniam, a voluptatum at. Ad, voluptatum excepturi veniam maxime iusto officia?</p>
+          </div>
+  </article>
+```
+![centrado-Y](/assets/centrado-Y.JPG)
+
+
+
+
+
