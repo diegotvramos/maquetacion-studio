@@ -1119,7 +1119,82 @@ mira que el contenido está fluyendo al 100% pero el resultado final del sitio p
 ```
 ![centrado-Y](/assets/centrado-Y.JPG)
 
+## Creando sección single page
+
+Si analizamos, tenemos un boton que hace un _call-to-action_ a la seccion de contacto, pero es un enlace en forma de boton,
+
+Tenemos un encabezado, y abajo un texto muy pequeño.
+
+Tambien tiene un enlace al la seccion de 'contacto' 
+
+Observa que en la version de PC el contenido empieza apartir de la mitad de pantalla
+
+¿como hago eso?
+
+Entonces la mejor solucion seria, usar el grid de 12 columnas de flexbox en bootstrap lo encuentras como: `https://getbootstrap.com/docs/5.3/layout/columns/#offsetting-columns`
+
+Entre el boton y el h2 hay una gran distancia, eso significa que hay que aplicarle un _margin-bottom_
+
+> documentación: `https://getbootstrap.com/docs/5.3/utilities/spacing/#margin-and-padding`
+
+¿Como poner palabras en negrita de un parrafo sin estar copiando y pegando?
+
+> así: few few few ``b{few}`` fwe y el editor de texto lo pone así => ``<b>few</b>``
+
+Para quitar la linea del link usamos la clase `text-decoration-none`
+
+Buscamos el Icono de la palomita check. `<i class="bi bi-check"></i>`
+
+Vé que son 3 parrafos maquetados a 2 columnas, voy a usar un conenedor fila `div`
+
+> Recuerda: los enlaces trabajan en linea asi que no se le puede aplicar un _margin-bottom_ (una de las caracteristicas de los elementos en linea es que ignora los margenes en la vertical) pero si es un enlace de tipo boton entonces si aplica
+
+a si que mejor aplicamos un _margin-top_ `mt-5` al elemeto de abajo
 
 
+## Creando sección multi page
+
+```html
+   <section id="multi-page" class="min-vh-100 bg-hero-image" style="--bg-image: url(../img/site-multipage.jpg)">
+        <article class="bg-alpha-color min-vh-100 d-flex align-items-center ">
+          <div class="container">
+            <article class="col-12 col-lg-6">
+              <a class="btn btn-lg btn-success text-white mb-5" href="contacto.html">
+                <b>Desde $500 <small>USD</small></b>
+              </a>
+              <h2 class="">Sitio multipágina</h2>
+              <small>El precio puede ser más bajo (o más alto) dependiendo de los requisitos de su proyecto.</small>
+              <p class="my-5 fs-5">Un <b>sitio web de varias páginas</b> consta de dos o más páginas. Este formato es útil si tiene ciertos elementos que desea mantener separados por páginas y urls diferentes.</p>
+              <a class="fs-4 text-decoration-none fw-bold" href="contacto.html">
+                Solicite una cotización ahora <i class="bi bi-chevron-double-right"></i>
+              </a>
+              <div class="row mt-5">
+                <div class="col">
+                  <p><i class="bi bi-check"> 2 a 6 páginas.</i></p>
+                  <p><i class="bi bi-check">100% Responsivo.</i></p>
+                  <p><i class="bi bi-check"> Diseño personalizado.</i></p>
+                </div>
+                <div class="col">
+                  <p><i class="bi bi-check">Corrección de estilo.</i></p>
+                  <p><i class="bi bi-check">Edición de imágenes.</i></p>
+                  <p><i class="bi bi-check">Soporte.</i></p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </article>
+      </section>
+```
+a la clse `bg-hero-image` podriamos ponele el _background-position: center;_
+
+```css
+  .bg-hero-image{
+  background-image: var(--bg-image); /*esta variable no está declarada en el Root*/
+  background-repeat: no-repeat; /*para que no se repita el fondo*/
+  background-size: cover;
+  background-position: center;
+}
+```
+## 
 
 

@@ -145,6 +145,7 @@ background-image: linear-gradient(
   background-image: var(--bg-image); /*esta variable no está declarada en el Root*/
   background-repeat: no-repeat; /*para que no se repita el fondo*/
   background-size: cover;
+  background-position: center;
 }
 
 .bg-third-color{
