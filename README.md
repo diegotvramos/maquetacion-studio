@@ -1195,6 +1195,31 @@ a la clse `bg-hero-image` podriamos ponele el _background-position: center;_
   background-position: center;
 }
 ```
-## 
+## Maquetado HTML de la sección clientes
+
+si tenemos 8 clientes,  más el título necesitamos un contenedor que tenga una fila con 9 columnas
+
+la celda del título se va desplazar a 12 columnas siempre.
+
+`<article class="col-12 text-center">`
+
+en el buscador de Botstrap buscamos 🔍 'cards' y usamos este modelo: `https://getbootstrap.com/docs/5.3/components/card/#image-overlays`
+
+es una frase que dijo el cliente de la cual estamos citando, entonces para eso nos sive la etiqueta `<blockquote>`
+
+Esta frase no aparece hasta que la pantalla sea de tamaño mediano `md` lo solucionamos agregando la clase: `class="d-none d-md-block"`
+
+```css
+  .d-none {
+    display: none !important;
+  }
+  .d-block {
+    display: block !important;
+  }
+```
+
+
+
+
 
 
