@@ -1217,6 +1217,19 @@ Esta frase no aparece hasta que la pantalla sea de tamaño mediano `md` lo soluc
     display: block !important;
   }
 ```
+trabajar con `cards` horizontales no me conviene. por que simulan un chat.
+
+Voy a usar esté tipo de _cards_
+
+`https://getbootstrap.com/docs/5.3/components/card/#image-caps`
+
+Esta tiene pie de _cards_ no la necesito por el momento: 
+
+> `https://getbootstrap.com/docs/5.3/components/card/#card-layout`
+
+Bootstrap tiene una seccion especial para las _links_
+
+> `https://getbootstrap.com/docs/5.3/components/card/#titles-text-and-links`
 
 
 
