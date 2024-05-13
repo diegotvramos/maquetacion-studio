@@ -1231,7 +1231,147 @@ Bootstrap tiene una seccion especial para las _links_
 
 > `https://getbootstrap.com/docs/5.3/components/card/#titles-text-and-links`
 
+![card-diference](/assets/card-diference.JPG) 
 
+Observa como una card de tamaño fijo no es responsivo.
+
+Responsivo:
+```html
+  <article class="col-12 text-center">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+              </div>
+              <img src="img/amarillo.jpg" class="card-img-bottom" alt="...">
+            </div>
+    </article>
+```
+
+No responsivo
+```html
+  <article class="col-12 col-sm-6 col-lg-4">
+            <div class="card" style="width: 18rem;">
+              <img src="img/amarillo.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+    </article>
+```
+
+
+Para quitar border usamos la clase de botstrap llamada `border-0` y para quitar las esquinas redondeadas usamos: `rounded-0`
+
+Para los colores de texto
+
+> `https://getbootstrap.com/docs/5.3/utilities/colors/`
+
+![colors](/assets/colors.JPG)
+
+pero mejor usa 🔍 'textos Fondos' (_text background_)
+
+> `https://getbootstrap.com/docs/5.3/helpers/color-background/#overview`
+
+![color-background](/assets/color-background.JPG)
+
+
+Para acomodar las targetas estoy usando la clase `card-group` y en sus hijos inmediatos estoy usando la clase `d-flex` ya que este hijo tien las medidas definidas por mí . hay una clase en bootstrap que es muy similar para las targetas llamada: `<div class="row row-cols-1 row-cols-md-3 g-4">`
+
+
+> `https://getbootstrap.com/docs/5.3/components/card/#grid-cards`
+
+para quitar los padding interno usamos la clase _gutter-0_
+
+> `https://getbootstrap.com/docs/5.3/layout/gutters/#no-gutters`
+
+
+MI TECNICA:
+
+![tecnica-card-1](/assets/tecnica-card-1.JPG)
+
+```html
+  <!-- <section class="row g-0"> -->
+          <section class="card-group">
+
+            <article class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card text-bg-dark border-0 rounded-0">
+              <img src="img/clients-1.jpg" class="card-img-top" alt="Andy Pandharikar">
+              <div class="card-body">
+                <h5 class="card-title">Andy Pandharikar</h5>
+                <p class="card-text">
+                  <small>CEO/Co-fundador, Commerce AI</small>
+                  <br>
+                  <a href="#" class="card-link">Ver Proyecto</a>
+                </p>
+                <p class="card-text">
+                  <blockquote class="d-none d-md-block">
+                    No estábamos satisfechos con ninguna de nuestras opciones anteriores. Pero Bad Dog tuvo lo que teníamos en mente.
+                  </blockquote>
+                </p>
+                <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </article>
+
+          <article class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card text-bg-dark  border-0 rounded-0">
+              <img src="img/clients-2.jpg" class="card-img-top" alt="Zeb Couch">
+              <div class="card-body">
+                <h5 class="card-title">Zeb Couch</h5>
+                <p class="card-text">
+                  <small>Dueño de Zeb Couch</small>
+                  <br>
+                  <a href="#" class="card-link">Ver Proyecto</a>
+                </p>
+                <p class="card-text">
+                  <blockquote class="d-none d-md-block">
+                    He trabajado con Bad Dog en varios proyectos ahora y seguiré trabajando siempre que pueda.
+                  </blockquote>
+                </p>
+                <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </article>
+
+          </section>
+```
+
+
+
+
+La segunda TECNICA es como no los propone la _grid-cards_ de _bootstrap_ en la cabezera declaro los tamaños. y el codigo se reduce mucho. 👍👍
+
+![tecnica-card-2](/assets/tecnica-card-2.JPG)
+
+
+```html
+  <section class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-0 ">
+
+    <div class="card">
+      <img src="img/bad-dog-studio-logo.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img/bad-dog-studio-logo.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </section>
+```
+
+##
 
 
 
