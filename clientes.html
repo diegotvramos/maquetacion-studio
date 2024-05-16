@@ -31,7 +31,7 @@
           <ul class=" navbar-nav ms-lg-auto">
             <li class="nav-item">
               <!-- tiene un atributo de accesibilidad par las personas() 'aria-current' -->
-              <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+              <a class="nav-link"  href="index.html">Inicio</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -45,7 +45,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="clientes.html">Clientes</a>
+              <a class="nav-link active" aria-current="page" href="clientes.html">Clientes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="comencemos.html">Comencemos</a>
@@ -65,7 +65,7 @@
 
       <div class="container">
         <!-- <section class="row"> -->
-        <!-- <section class="row g-0"> -->
+        <!-- <section class="row g-0"> con la clase 'card-group' ya no necesitas el gutter. -->
           <section class="card-group">
 
           <article class="col-12 text-center">
@@ -77,7 +77,7 @@
 
           <!-- <article class="col-12 text-center">
             <div class="card">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                 <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
@@ -90,96 +90,160 @@
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-1.jpg" class="card-img-top" alt="Andy Pandharikar">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Andy Pandharikar</h5>
                 <p class="card-text">
                   <small>CEO/Co-fundador, Commerce AI</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-1">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    No estábamos satisfechos con ninguna de nuestras opciones anteriores. Pero Bad Dog tuvo lo que teníamos en mente.
+                    No estábamos satisfechos con ninguna de nuestras opciones anteriores. Pero Studio Manchas tuvo lo que teníamos en mente.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
               </div>
             </div>
           </article>
+
+          <!-- Modal 1 -->
+          <div class="modal fade" id="cliente-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Commerce AI</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Posicioné una nueva marca comercial (en línea) y diseñé un sitio web adaptado y hecho a medida.</p>
+                  <img src="img/work-layout-1.jpg" alt="Commerce AI" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
           
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark  border-0 rounded-0">
               <img src="img/clients-2.jpg" class="card-img-top" alt="Zeb Couch">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Zeb Couch</h5>
                 <p class="card-text">
-                  <small>Dueño de Zeb Couch</small>
+                  <small>Dueño de Walkers</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-2">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    He trabajado con Bad Dog en varios proyectos ahora y seguiré trabajando siempre que pueda.
+                    He trabajado con Studio Manchas en varios proyectos ahora y seguiré trabajando siempre que pueda.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
               </div>
             </div>
           </article>
+
+          <!-- Modal 2 -->
+          <div class="modal fade" id="cliente-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Walkers</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>He estado trabajando con Zeb en varios otros proyectos en el último año. Cuando se contactó conmigo para hablar sobre un proyecto que se desarrollaba en torno al diseño de una tienda web personalizada para su padre, inmediatamente me interesé e inspiré. Esto resultó ser un proyecto realmente inspirador y divertido en el que trabajar en conjunto, lo que dio como resultado un sitio web de diseño personalizado y muy creativo con una tienda en línea.</p>
+                  <img src="img/work-layout-2.jpg" alt="Walkers" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
 
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark  border-0 rounded-0">
               <img src="img/clients-3.jpg" class="card-img-top" alt="Lori Knisely">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Lori Knisely</h5>
                 <p class="card-text">
                   <small>Co-dueña & Diseñadora de Hey Textile</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-3">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    ¡Bad Dog, siempre lo consigue!
+                    ¡Studio Manchas, siempre lo consigue!
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
               </div>
             </div>
           </article>
+
+          <!-- Modal 3 -->
+          <div class="modal fade" id="cliente-3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Hey Textile</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Lori es dueña de su negocio junto con su esposo. Resultan ser una de esas empresas con las que me encanta trabajar. Me dan mucha libertad en mi proceso de diseño creativo, pero aún tienen muchas de sus propias ideas que quieren combinar. Este proyecto resultó ser un proyecto super divertido para trabajar juntos. ¡Ambos estamos imaginando una buena relación de negocios para trabajar nuevamente en proyectos futuros!</p>
+                  <img src="img/work-layout-3.jpg" alt="Hey Textile" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
 
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-4.jpg" class="card-img-top" alt="Tom Allan">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Tom Allan</h5>
                 <p class="card-text">
                   <small>Co-fundador & Director, Basis Networks</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-4">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    Definitivamente continuaremos usando los servicios de Bad Dog para nuestros proyectos futuros.
+                    Definitivamente continuaremos usando los servicios de Studio Manchas para nuestros proyectos futuros.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
               </div>
             </div>
           </article>
+
+          <!-- Modal 4 -->
+          <div class="modal fade" id="cliente-4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Basis Networks</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Tom me contactó con la idea de hacer un rediseño completo de su sitio web (obsoleto) y también hacer que responda. Estaba buscando un sitio web de aplicación de estilo moderno y me dio mucha libertad para crear un diseño que tenía en mente. El resultado es un sitio web de aspecto moderno del que ambos estamos orgullosos.</p>
+                  <img src="img/work-layout-4.jpg" alt="Basis Networks" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
 
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-5.jpg" class="card-img-top" alt="Jin Choeh">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Jin Choeh</h5>
                 <p class="card-text">
                   <small>Co-founder & CEO Swingvy</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-5">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    Bad Dog estaba más allá de nuestras expectativas.
+                    Studio Manchas estaba más allá de nuestras expectativas.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
@@ -187,15 +251,31 @@
             </div>
           </article>
 
+          <!-- Modal 5 -->
+          <div class="modal fade" id="cliente-5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Swingvy</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>He estado trabajando con el equipo de Shale Capital Group desde 2014. Hemos trabajado juntos en varios proyectos de sitios web de (re) diseño y (re) marca. Estoy muy contento de que nuestra relación continua demuestre que puedo ofrecer la calidad que requieren en sus proyectos.</p>
+                  <img src="img/work-layout-5.jpg" alt="Swingvy" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-6.jpg" class="card-img-top" alt="Jennifer Blair">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Jennifer Blair</h5>
                 <p class="card-text">
                   <small>CEO Lash Spa Studio</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-6">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
@@ -207,19 +287,35 @@
             </div>
           </article>
 
+          <!-- Modal 6 -->
+          <div class="modal fade" id="cliente-6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Lash Spa Studio</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>He estado trabajando con el equipo de Lash Spa Studio desde 2014. Hemos trabajado juntos en varios proyectos de sitios web de (re) diseño y (re) marca. Estoy muy contento de que nuestra relación continua demuestre que puedo ofrecer la calidad que requieren en sus proyectos.</p>
+                  <img src="img/work-layout-6.jpg" alt="Lash Spa Studio" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-7.jpg" class="card-img-top" alt="Sietse Kingma">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Sietse Kingma</h5>
                 <p class="card-text">
                   <small>Co-fundador Bambuu BV</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-7">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    Bad Dog crea sitios impresionantes, estrategias increíbles y mucho más.
+                    Studio Manchas crea sitios impresionantes, estrategias increíbles y mucho más.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
@@ -227,25 +323,59 @@
             </div>
           </article>
           
+          <!-- Modal 7 -->
+          <div class="modal fade" id="cliente-7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Bambuu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>He estado trabajando con Bambuu BV como diseñador gráfico y diseñador web de forma regular desde 2014. Bambuu ha demostrado ser un negocio de inicio muy exitoso en los Países Bajos y estoy muy contento de poder ofrecer la calidad de trabajo que ofrecen. Requieren en sus proyectos.</p>
+                  <img src="img/work-layout-7.jpg" alt="Bambuu" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
           <article class="col-12 col-sm-6 col-lg-4 d-flex">
             <div class="card text-bg-dark border-0 rounded-0">
               <img src="img/clients-8.jpg" class="card-img-top" alt="Sergie Magdalin">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column justify-content-md-center">
                 <h5 class="card-title">Sergie Magdalin</h5>
                 <p class="card-text">
                   <small>Co-fundador de Webflow</small>
                   <br>
-                  <a href="#" class="card-link">Ver Proyecto</a>
+                  <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#cliente-8">Ver Proyecto</a>
                 </p>
                 <p class="card-text">
                   <blockquote class="d-none d-md-block">
-                    Bad Dog es una de los mejores empresas con las que he trabajado.
+                    Studio Manchas es una de los mejores empresas con las que he trabajado.
                   </blockquote>
                 </p>
                 <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
               </div>
             </div>
           </article>
+
+          <!-- Modal 8 -->
+          <div class="modal fade" id="cliente-8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title fs-5" id="exampleModalLabel">Webflow</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Fue justo al comienzo de mi negocio (principios de 2014), cuando el equipo de Webflow me contactó después de haber visto algunos de mis sitios web basados en Webflow. Estaban lanzando un Template Marketplace en ese entonces y me pidieron que fuera parte de él. ¡He estado creando plantillas de flujo web html5 modernas y receptivas para ellos desde entonces!</p>
+                  <img src="img/work-layout-8.png" alt="Webflow" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           </article>
         </section>
 
@@ -257,7 +387,7 @@
               <!-- <div class="col-12 col-sm-6 col-lg-4 mb-sm-0 d-flex"> -->
                 <!-- <div class="card">
                   <img src="img/clients-2.jpg"class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body d-flex flex-column justify-content-md-center">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
@@ -268,7 +398,7 @@
               <!-- <div class="col-12 col-sm-6 col-lg-4 mb-sm-0 d-flex"> -->
                 <!-- <div class="card">
                   <img src="assets/color-background.JPG" class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body d-flex flex-column justify-content-md-center">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
@@ -279,7 +409,7 @@
             <!-- <div class="col-12 col-sm-6 col-lg-4 mb-sm-0 d-flex"> -->
               <!-- <div class="card">
                 <img src="img/bad-dog-studio-logo.png" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column justify-content-md-center">
                   <h5 class="card-title">Card title</h5>
                   <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                   <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
@@ -290,7 +420,7 @@
               <!-- <div class="col-12 col-sm-6 col-lg-4 mb-sm-0 d-flex"> -->
                 <!-- <div class="card">
                   <img src="img/bad-dog-studio-logo.png" class="card-img-top" alt="...">
-                  <div class="card-body">
+                  <div class="card-body d-flex flex-column justify-content-md-center">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>

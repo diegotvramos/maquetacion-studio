@@ -53,6 +53,11 @@ a:hover {
   background-color: var(--second-color) !important;
 }
 
+.btn-close {
+  /* rgb(217, 0, 98) lo comvertimos a hexadecimal = #d90062, ahora lo replazamos en el atributo 'fill': fill='%23d90062'%3e%3cpath*/
+  --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d90062'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+}
+
 .dropdown-item {
   color: var(--first-alpha-color);
   font-weight: bold;
@@ -146,6 +151,10 @@ background-image: linear-gradient(
   background-repeat: no-repeat; /*para que no se repita el fondo*/
   background-size: cover;
   background-position: center;
+}
+
+.bg-second-alpha-color{
+  background-color: var(--second-alpha-color);
 }
 
 .bg-third-color{

@@ -1284,7 +1284,7 @@ Para acomodar las targetas estoy usando la clase `card-group` y en sus hijos inm
 
 > `https://getbootstrap.com/docs/5.3/components/card/#grid-cards`
 
-para quitar los padding interno usamos la clase _gutter-0_
+para quitar los padding interno usamos la clase _gutter-0 `g-0` con esto quitamos los espaciados_
 
 > `https://getbootstrap.com/docs/5.3/layout/gutters/#no-gutters`
 
@@ -1371,8 +1371,95 @@ La segunda TECNICA es como no los propone la _grid-cards_ de _bootstrap_ en la c
   </section>
 ```
 
-##
+## Maquetado CSS de la sección clientes
+
+
+vamos a alinear el texto de las targetas al centro en tamaño PC. tambien vamos a poner un color al overlay para poder ver  mejor el texto.
+
+para centrar el texto usamos estas clases:
+
+> `d-flex flex-column justify-content-md-center`
+
+![text-center-flex](/assets/text-center-flex.JPG)
+
+
+para no estar modificando en cada una mejor usamos la herramienta para reemplazar.
+
+![tecnica-remplazo](/assets/tecnica-remplazo.JPG)
+
+```html
+  <article class="col-12 col-sm-6 col-lg-4 d-flex">
+            <div class="card text-bg-dark border-0 rounded-0">
+              <img src="img/clients-1.jpg" class="card-img-top" alt="Andy Pandharikar">
+              <div class="card-body d-flex flex-column justify-content-md-center">
+                <h5 class="card-title">Andy Pandharikar</h5>
+                <p class="card-text">
+                  <small>CEO/Co-fundador, Commerce AI</small>
+                  <br>
+                  <a href="#" class="card-link">Ver Proyecto</a>
+                </p>
+                <p class="card-text">
+                  <blockquote class="d-none d-md-block">
+                    No estábamos satisfechos con ninguna de nuestras opciones anteriores. Pero Studio Manchas tuvo lo que teníamos en mente.
+                  </blockquote>
+                </p>
+                <p class="card-text text-white-50"><small>Last updated 3 mins ago</small></p>
+              </div>
+            </div>
+          </article>
+```
+
+## Integrando Modales a la sección clientes.
+
+vamos a bootstrap y buscamos 'modal'
+
+al enlace que abre el proyecto ponemos estos atributos propios de bootstrap con el id (_tiene que ser único_) 
+
+> `data-bs-toggle="modal" data-bs-target="#exampleModal"`
+
+> ¡importante! no olvides poner el `#` por delante en e valor del atributo _data-bs-target_
+
+
+Para que el modal sea _scrolleable_ `https://getbootstrap.com/docs/5.3/components/modal/#scrolling-long-content`
+
+![scroll](/assets/scroll.JPG)
+
+```html
+  <!-- Scrollable modal -->
+  <div class="modal-dialog modal-dialog-scrollable">
+    ...
+  </div>
+```
+
+
+ve que la imagen se desborda
+
+![desbordamiento](/assets/desbordamiento-img.JPG)
+
+para corregirlo debemos hacerlo responsiva en bootrap buscamos 🔍 'reponsive image' `<img src="..." class="img-fluid" alt="...">`
+
+> `https://getbootstrap.com/docs/5.3/content/images/#responsive-images`
+
+
+cambiamos el color al boton _close_
+
+```css
+  .btn-close {
+    /* rgb(217, 0, 98) lo comvertimos a hexadecimal = #d90062, ahora lo replazamos en el atributo 'fill': fill='%23d90062'%3e%3cpath*/
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23d90062'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414z'/%3e%3c/svg%3e");
+  }
+```
+
+![btn-close-color](/assets/btn-close-color.JPG)
 
 
 
+
+Tengo un pequeño problema: En el header al momento de seleccionar una seccion no se pinta de color blanco. 
+
+![no-active](/assets/no-active.JPG)
+
+Busqué y encontre que la clase `active` estaba seleccionada en toda las hojas html en la seccion 'INICIO' hay que cambiarlo manualmente a la seccion que corresponda.
+
+`<a class="nav-link active" href="clientes.html">Clientes</a>`
 
