@@ -117,6 +117,7 @@ a:hover {
   /* backdrop-filter: blur(0.5rem); */
 }
 
+
 .bg-gradient-blue-green{
   background-color: rgba(83, 184, 152, 1);
   /* background-image: linear-gradient(
@@ -124,57 +125,60 @@ a:hover {
     rgba(47, 145, 224, 0.91),
     rgba(7, 31, 51, 0.97) 79%
     ); */
-  background-image: linear-gradient( /*tu decides cual aplicar*/
+    background-image: linear-gradient( /*tu decides cual aplicar*/
     131deg,
     rgba(28, 118, 173, 0.92),
     rgba(83, 184, 152, 1)
-);
-background-image: linear-gradient(
-    131deg,
-    rgba(159, 0, 217, 0.92),
-    rgba(83, 184, 152, 1) 
-);
-background-image: linear-gradient(
-    131deg,
-    rgba(217, 0, 203, 0.838),
-    rgba(83, 184, 152, 1) 
-);
-background-image: linear-gradient(
-    131deg,
-    rgb(217, 0, 163),
-    rgba(83, 184, 152, 1) 
-);
+    );
+    background-image: linear-gradient(
+      131deg,
+      rgba(159, 0, 217, 0.92),
+      rgba(83, 184, 152, 1) 
+      );
+      background-image: linear-gradient(
+        131deg,
+        rgba(217, 0, 203, 0.838),
+        rgba(83, 184, 152, 1) 
+        );
+        background-image: linear-gradient(
+          131deg,
+          rgb(217, 0, 163),
+          rgba(83, 184, 152, 1) 
+          );
 }
-
-.bg-hero-image{
-  background-image: var(--bg-image); /*esta variable no está declarada en el Root*/
-  background-repeat: no-repeat; /*para que no se repita el fondo*/
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-second-alpha-color{
-  background-color: var(--second-alpha-color);
-}
-
-.bg-third-color{
-  background-color: var(--third-color);  
-}
-
-.text-third {
-  color: var(--third-color);
-}
-
-
-
-
-
-/* .bg-gradient-blue-green {
-  background: linear-gradient();
-} */
-
-/* // <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
+        
+        .bg-hero-image{
+          background-image: var(--bg-image); /*esta variable no está declarada en el Root*/
+          background-repeat: no-repeat; /*para que no se repita el fondo*/
+          background-size: cover;
+          background-position: center;
+        }
+        
+        .bg-second-alpha-color{
+          background-color: var(--second-alpha-color);
+        }
+        
+        .bg-third-color{
+          background-color: var(--third-color);  
+        }
+        
+        .text-first-color{
+          color: var(--first-color);
+        }
+        .text-third {
+          color: var(--third-color);
+        }
+        
+        
+        
+        
+        
+        /* .bg-gradient-blue-green {
+          background: linear-gradient();
+        } */
+        
+        /* // <uniquifier>: Use a unique and descriptive class name
+        // <weight>: Use a value from 100 to 900
 
 .raleway-<uniquifier> {
   font-family: "Raleway", sans-serif;

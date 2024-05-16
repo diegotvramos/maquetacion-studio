@@ -1453,8 +1453,6 @@ cambiamos el color al boton _close_
 ![btn-close-color](/assets/btn-close-color.JPG)
 
 
-
-
 Tengo un pequeño problema: En el header al momento de seleccionar una seccion no se pinta de color blanco. 
 
 ![no-active](/assets/no-active.JPG)
@@ -1462,4 +1460,159 @@ Tengo un pequeño problema: En el header al momento de seleccionar una seccion n
 Busqué y encontre que la clase `active` estaba seleccionada en toda las hojas html en la seccion 'INICIO' hay que cambiarlo manualmente a la seccion que corresponda.
 
 `<a class="nav-link active" href="clientes.html">Clientes</a>`
+
+> **``<q>``: El elemento de cita en línea** `El elemento HTML <q> indica que el texto adjunto es una cita corta en línea. La mayoría de los navegadores modernos implementan esto rodeando el texto entre comillas. Este elemento está destinado a citas breves que no requieren saltos de párrafo; para citas de bloque independiente, utiliza el elemento <blockquote>.`
+
+
+## Maquetando HTML de la sección comencemos.
+
+Analicemos la estructura
+
+Tenemos un contenedor con una fila que siempre va ir a 12 columnas
+
+![comencemos-fila-12](/assets/fila-12-comencemos.JPG)
+
+son 5 pasos cada una con su imagen serian 10 mas la primera, serian 11 seldas(articles)
+
+podemos usar las clases de bootstrap para las letras en italica y bold(negrita) font size (tamaño de letra):
+
+> `https://getbootstrap.com/docs/5.3/utilities/text/#font-weight-and-italics`
+
+> `<p class="fw-bold">Bold text.</p>`, `<p class="fst-italic">Italic text.</p>`, `<p class="fs-1">.fs-1 text</p>`
+
+para que no tenga este error de que la imagen se desborde aplicamos la clase de 'imagen responsiva': `img-fluid`
+
+![imagen-responsiva](/assets/imagen-responsiva.JPG)
+
+Me dí cuenta que en el tamaño tableta las imagenes iban a un costado.
+
+![img-no-center](/assets/img-no-center.JPG)
+
+
+busque en bootstrap y lo que encontre fue esta clase que centra imagenes: `class="text-center"`
+
+> `https://getbootstrap.com/docs/5.3/content/images/#aligning-images`
+
+```html
+  <div class="text-center">
+    <img src="..." class="rounded" alt="...">
+  </div>
+```
+ironicamente funcionó 😊😊😊
+
+![img-center](/assets/img-center.JPG)
+
+
+## Maquetado CSS de la seccion comencemos.
+
+superIndice
+
+`<sup class="text-first-color fw-bold">*</sup>`
+
+los pasos pares 2 y 4 vamos hacer un cambio de orden entre la imagen y el texto en el tamaño `LG`
+
+tendria que hacerlo uno por uno
+
+Pero tener todo el contenido en una sola etiqueta `row` eso me va complicar el juego del ordenamiento.
+
+en las clases auxiliares de flexbox, en la parte de orden Bootstrap solamente tiene hasta 6 valores de orden.
+
+> .order-0
+> .order-1
+> .order-2
+> .order-3
+> .order-4
+> .order-5
+
+pero yo tengo 12 columnas dentro de una misma fila. entonces mantener el orden me va costar trabajo para hacer esa inversion.
+
+se van a dar cuenta, que va ver veces que podemos resolverlo en una sola fila, pero como en este caso el juego de estar invirtiendo para generar este layout de zic ZACK, me va comvenir que cada pareja de pasos estén dentro de una fila independiente para poder ahi hacer internamente la inversion.
+
+lo que hacemos para solucionarlo es envolver en una seccion cada par de articulos así.
+
+```html
+  <section class="row">
+          <article class="col-12 col-lg-6">
+            <h2>Paso 1</h2>
+            <h3>Concepto y Presupuesto</h3>
+            <p>Discutimos las primeras ideas durante una breve reunión en sitio, por correo electrónico o video llamada. Siguiendo las ideas iniciales, te presentaré un presupuesto oficial para el proyecto.</p>
+          </article>
+          <article class="col-12 col-lg-6 text-center">
+            <img src="img/workflow-step-1.png" class="img-fluid" alt="Paso 1: Concepto y Presupuesto">
+          </article>
+        </section>
+
+        <section class="row">
+          <article class="col-12 col-lg-6 order-lg-1">
+            <h2>Paso 2</h2>
+            <h3>Propuesta de Diseño</h3>
+            <p>Una vez que se firme y/o acepte la cotización, recibirás la primera factura (50% del monto total acordado). Después del pago iniciaré el proyecto. Estudiaré tu empresa, producto o servicio. Para acelerar el proceso, es necesario que me entregues todo el material del proyecto en este momento (Logo, Textos, Fotos, Mapa del sitio, etc.). En 7 días te presentaré un diseño profesional y apropiado para tu sitio web.</p>
+          </article>
+          <article class="col-12 col-lg-6 text-center">
+            <img src="img/workflow-step-2.png" class="img-fluid" alt="Paso 2: Propuesta de Diseño">
+          </article>
+        </section>
+```
+
+para hacer sic sac aplicamos la clase `order-lg-1` solo a los pasos pares.
+
+ve que no está alineada al centro en tamaño `LG`
+
+![no-align](/assets/no-align-parrafo-comencemos.JPG)
+
+para alinear:
+
+recuerda que la clase row ya tiene flexbox.
+
+
+`<div class="d-flex align-items-center">...</div>` centra respecto a lo items. 🆗
+
+![item-alineado](/assets/item-alineado.JPG)
+
+
+
+``align-content-center`` centra respecto al contenido
+
+Tambien debemos cambiar la alineacion del texto en tamaño `LG` 
+
+en bootstrap buscamos 🔍 'text alignment' 
+
+> `<p class="text-lg-end">End aligned text on viewports sized LG (large) or wider.</p>`
+ 
+
+a todo los pasos impares aplicamos esta clase `text-lg-end`
+
+![text-alignment-end](/assets/text-alignment-end.JPG)
+
+
+aplicamos `py-5` para que quite la linea blanca de abajo. por que los parrafos tiene un margen por defecto y se comportan en linea 
+
+pordria quitarle con _margin-0_ _m-0_ pero se pega mucho al _footer_ entonces aumento un _padding button 5_
+
+![linea-blanca](/assets/linea-blanca.JPG)
+
+```html
+  <!-- pt-5 pb-5  = py-5 -->
+    <main class="py-5 bg-color">
+
+
+      <article class="text-center mt-5">
+          <p> <sup class="text-first-color fw-bold">*</sup> Todo cambio adicional generará cargos extras. Tarifa por hora: <b>50 usd + impuestos</b>.</p>
+         </article>
+      </main>
+```
+
+
+## 
+
+
+
+
+
+
+
+
+
+
+
 
