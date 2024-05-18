@@ -1603,13 +1603,159 @@ pordria quitarle con _margin-0_ _m-0_ pero se pega mucho al _footer_ entonces au
 ```
 
 
+## Maquetado HTML de la sección interesado
+
+Primero hagamos un análisis
+
+tenemos un h1
+
+Parrafo introductorio
+
+Comentarios y un mápa 
+
+con la hipotetica ubicación de este estudio digital
+
+> todo esto se vé en la version mobil
+
+> en version pc el mapa aparece a la Izquierda. Para eso solo invertimos el orden con la clase : `order-lg-1`
+
+
+Para agregar un video o un mapa de Google 🔍 'aspect-ratios'
+
+> `https://getbootstrap.com/docs/5.3/helpers/ratio/#aspect-ratios`
+
+> hay un pequeño detalle: el mapa de Google se sobre pone a los demas items
+
+Buscamos un carousel en bootstrap.
+
+Ve que el carousel tiene un texto encima. entonces buscamos ese tipo de carousel.
+
+Copiamos el código. 
+
+> lo ponemos fuera del contenedor por que lo queremos a pantalla completa
+
+
+el icono de _next_ y _preview_ no se notan, busqué algo similar a lo que muestra instagram y lo encontre en:
+
+>  `https://icons.getbootstrap.com/icons/arrow-left-circle-fill/`
+
+¿Cómo cambiar el tamaño de los íconos de Bootstrap?
+
+```css
+  /*cambiamos el tamaño de los iconos propios de Bootstrap*/
+.bi{
+  font-size: 3em;
+}
+```
+> `https://es.stackoverflow.com/questions/503103/cambiar-tama%C3%B1o-de-%C3%ADconos-bootstrap`
+
+![carousel-icon](/assets/carousel-icon.JPG)
+
+## Modificando el carrusel de Bootstrap
+
+
+```html
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+        <!-- Cuando la opción está configurada en true,  el carrusel no comenzará a funcionar automáticamente al cargar la página. 
+          En cambio, sólo comenzará después de la primera interacción del usuario. -->
+        <!-- para que haga autoplaying añande este atributo 'data-bs-ride="carousel"' -->
+
+        
+
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <!-- sacamos esta descripcion y lo ponemos encima, d-none d-md-block -->
+        <div class="carousel-caption ">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+        </div>
+  </div>
+```
+
+
+
+ve, que si agregamos un `z-index: 99;`  la clase `carousel-caption` ya se puede visualizar la descripcion.
+
+![z-index](/assets/z-index.JPG)
+
+
+si buscamos el css de botstrap nos encontramos con estos atributos de la clase _carousel-caption_:
+
+```css
+  .carousel-caption {
+    z-index: 99;
+
+    position: absolute;
+    right: 15%;
+    bottom: 1.25rem;
+    left: 15%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+  }
+```
+
+modificamos lo que nos hace falta en nuestro css 
+
+```css
+  .carousel-caption {
+    z-index: 99;
+    /* subimos 3rem para poder interactuar con los (botones) indicadores de abajo*/
+    bottom: 3rem;
+}
+```
+
+como este texto es muy elaborado, en la version para mobil no lo voy a mostrar gracias a esta clase `d-none`
+
+```html
+
+  <aside class="d-none d-md-block">
+              <p>Comencé a crear sitios y aplicaciones web en <b>2021</b>.</p>
+              <p>Valoro mucho el concepto de<em>"<b>menos es más</b>"</em>.</p>
+              <p>Trabajo de forma remota e independiente.</p>
+            </aside>
+```
+
+![texto-version-mobil](/assets/texto-version-mobil.JPG)
+
+![texto-version-pc](/assets/texto-version-pc.JPG)
+
+
+
+el mapa no era responsivo.
+
+![mapa-no-responsivo](/assets/mapa-no-responsivo.JPG)
+
+lo solucioné quitando las `<div>`  extra.
+
+ANTES: 
+
+```html
+  <div class="ratio ratio-16x9 d-flex">
+              <div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.4623547204625!2d-68.20621763134251!3d-16.483160696064463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915ede25cd741f53%3A0x8a8ee4fb45790868!2sPlaza%20Villa%20Ingenio!5e0!3m2!1ses!2sbo!4v1715997990436!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe></div>
+  </div>
+```
+
+AHORA: 
+
+![mapa-sin-div-extra](/assets/mapa-sin-div-extra.JPG)
+
+```html
+  <div class="ratio ratio-16x9 d-flex">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d956.4623547204625!2d-68.20621763134251!3d-16.483160696064463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915ede25cd741f53%3A0x8a8ee4fb45790868!2sPlaza%20Villa%20Ingenio!5e0!3m2!1ses!2sbo!4v1715997990436!5m2!1ses!2sbo" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+  </div>
+```
+
+
 ## 
-
-
-
-
-
-
 
 
 
