@@ -1755,10 +1755,142 @@ AHORA:
 ```
 
 
+## Maquetando el formulario de contacto.
+
+en la documentación de bootstrap buscamos 🔍 'forms'
+
+te recomiendo construir tu formulario en base a tus necesidades.
+
+vamos a enviar el formulario con 'form-submit'
+
+utilizamos la etiqueta `<form>` 
+
+hay una clase llamada `.form-control`
+
+```css
+  .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+```
+
+y la otra clase se llama `.form-label`
+
+Estas dos clases son las que nos van a servir para trabajar los elementos del formulario
+
+vamos la poner las etiquetas de `<labels>` son importantes por que es un elemento de accesibilidad
+
+> a las etiquetas `<label>` le agregamos la clase `class="form-label"`
+
+> y a los inputs `<input>` le agregamos la clase `class="form-control"`
+
+queda así: 
+
+```html
+  <form action="">
+              <label class="form-label" for="name">Nombre:</label>
+              <input class="form-control" id="name" name="name" placeholder="Tu nombre" type="text" required>
+
+              <label class="form-label" for="email">Email:</label>
+              <input class="form-control" id="email" name="email" placeholder="Tu correo" type="email" required>
+
+              <label class="form-label" for="comments">Comentarios :</label>
+              <input class="form-control" id="comments" name="comments" placeholder="Déjanos tus comentarios">
+
+              <input class="btn btn-lg btn-success" type="submit">
+            </form>
+```
+
+![form-pegado](/assets/form-pegado.JPG)
+
+De la documentación de los formularios.
+
+Bootstrap trabaja por default los elementos de formulario en bloque
+
+entonces lo egrupamos en `<div`s 
+
+al text-area le agregamos el atributo `rows="5"`
+
+queda de esta manera:
+
+![form-acabado](/assets/form-acabado.JPG)
+
+## Enviando el formulario de contacto.
+
+vamos a utilizar una api que se llama:
+
+> `https://formsubmit.co/`
+
+> ¡Importante! todos tus elementos de formulario deben tener el atributo `name="name" , name="email", name="comments"`
+
+por que ese es el nombre de variable que va mandar en el reporte que te llegue por correo electrónico
+
+Este servicio lo tienes que probar ya sea en un dominio en internet o desde un servidor local si tu estas maquetando y abriendo tus archivos directamente desde el disco duro no va funcionar. utiliza live-server
+
+vamos a usar los atributos con con el prefijo de guion abajo. `_NEXT` y `_SUBJECT`
+
+_NEXT
+
+> `<input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">`
+
+_SUBJECT (para que le pongamos un título al correo que nos va enviar FormSubmit a nuestro correo electrónico)
+
+> `<input type="hidden" name="_subject" value="New submission!">`
+
+
+cramos una página para el GRACIAS.
+
+```html
+     <main class="pt-5 bg-color text-center min-vh-100 d-flex justify-content-center align-items-center">
+      <!-- "justify-content-center" para que lo center en el eje X(horizontal) y "align-items-center" para que lo centre en el eje Y(vertical) -->
+      <!-- necesito que esté en un solo contenedor para que este article se va sentrar respecto del main que está a pantalla completa -->
+      <article>
+        <h1 class="display-1">¡GRACIAS!🤗</h1>
+        <P class="fs-3">Muchas gracias por tus comentarios.</P>
+      </article>
+
+    </main>
+
+    <footer class="bg-dark p-3 sticky-bottom">
+      <div class="container text-center">
+
+        <nav class="d-flex justify-content-evenly border-bottom border-secondary mb-2 pb-2">
+          <!-- a[href="https://.com"][target="_blank"]*7>i.bi.bi- -->
+          <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter fs-4"></i></a>
+          <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube fs-4"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="https://m.me/diegotvramos" target="_blank"><i class="bi bi-messenger fs-4"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=59176503020" target="_blank"><i class="bi bi-whatsapp fs-4"></i></a>
+          <!-- <a href="https://.com" target="_blank"><i class="bi bi-"></i></a> -->
+        </nav>
+        <small class="text-white">
+          &copy; 2024 diseñado por 🐾Manchas🐾 y <a href="https://github.com/diegotvramos" target="_blank">@diegotvramos</a>
+        </small>
+        
+      </div>
+    </footer>
+```
+
+aplicamos la clase `sticky-bottom` al pie de página para que se vea al cargar la página
+
+la primera vez damos de alta.
+
+![primera-vez](/assets/primera-vez.JPG)
+
+la segunda vez y las demas veces solo hay que activar al capcha 🤔🤔
+
 ## 
-
-
-
-
-
-

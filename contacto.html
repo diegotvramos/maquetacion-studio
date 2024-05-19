@@ -70,7 +70,31 @@
             <p class="fs-5">Para más información, puedes contactarme en <a href="mailto: 00dramos@gmail.com">info@studiomanchas.com</a> </p>
           </article>
           <article class="col-12 col-lg-6 order-lg-1">
-            Formulario
+            <form action="https://formsubmit.co/diegovillacortaramos@gmail.com" method="POST">
+
+              <div class="mb-3">
+                <label class="form-label" for="name">Nombre:</label>
+                <input class="form-control" id="name" name="name" placeholder="Tu nombre" type="text" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-control" id="email" name="email" placeholder="Tu correo" type="email" required>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="comments">Comentarios :</label>
+                <textarea rows="5" class="form-control" id="comments" name="comments" placeholder="Déjanos tus comentarios"></textarea>
+              </div>
+
+              <div class="mb-3">
+                <input class="btn btn-lg btn-success" type="submit">
+                <!-- <input type="hidden" name="_next" value="https://gracias.co/"> -->
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/gracias.html">
+                <input type="hidden" name="_subject" value="Comentario de la Maquetacion en Bootstrap">
+              </div>
+              
+            </form>
           </article>
           <article class="col-12 col-lg-6">
             <div class="ratio ratio-16x9 d-flex">
