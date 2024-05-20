@@ -1893,4 +1893,120 @@ la primera vez damos de alta.
 
 la segunda vez y las demas veces solo hay que activar al capcha 🤔🤔
 
-## 
+Algo que noté.
+
+al llegar a la imagen 3 de la card hacia un pequeño temblor. en el nombre del desarrollador.
+
+![temblor](/assets/temblor.JPG)
+
+lo que descubrí es que era causado por el tamaño original de la imagen. mira cuando pongo una imagen de tamaño(altura baja.)
+
+![card-alborotada](/assets/card-alborotada.JPG)
+
+> Muy importante: hay que darles un solo tamaño a todas las imagenes de la card para que no ocurra este tipo de errores.
+
+## Navbar en sitios One Page
+
+no tuvimos que hacer código javaScript
+
+lo que si modifiqué fueron algunos estilos CSS para fondos personalizados o los colores de letra.
+
+Cuando estamos en un sitio multi-página. y abrimos la barra de navegación en version mobil y a la hora de darle click a cualquiera seccion. se abre dicho archivo y se ciera la barra de navegacion. lo cual está bien.
+
+
+
+Ahora ¿Que pasa en un sitio ONE page?
+
+en la version de PC no hay ningun problema.
+
+¿que pasa en la barra de navegación de la versin mobil?
+
+nos lleva a la seccion seleccionada, pero la barra de navegacion no se ciera lo cual está mal.
+
+Entonces debemos de aplicar programación Java Script
+
+y buscar.
+
+(cuando tengas estas necesidades, de que derrepente algo con el comportamiento de bootstrap no te funciona, siempre remiteté a la documentación)
+
+en este caso buscamos en la documentación de Bootstrap del componente: 🔍 'Collapse' en la seccion 'via js'
+
+> `https://getbootstrap.com/docs/5.3/components/collapse/#via-javascript`
+
+si tu quieres cambiar el comportamiento de la programación de un componente
+
+
+
+
+![one-page](/assets/one-page.JPG)
+
+lo que yo tendria que hacer es decirle "oye, cada vez que se clikee uno de estos enlaces del menú de navegación cierra el collapse"
+
+aca vamos a utilizar un concepto _Delegacion de eventos_ 
+
+para no estarle asignando un evento a cada uno de estos enlaces(botones) pues mejor 
+
+> el evento del click se lo asigno al document y por delegacion de eventos solamente detecto el click cuando sea un enlace que forme parte de la barra de navegación.
+
+este fragmento de código nos proporciona bootstrap
+
+```js
+  const bsCollapse = new bootstrap.Collapse('#myCollapse', {
+    toggle: false
+  })
+```
+
+
+> `#myCollapse` = selector 
+
+ahora cual es el nombre del Id o por que selector voy a ubicar al collapse.
+
+pues el navbar - collapse tiene un id
+
+> `<div class="collapse navbar-collapse" id="navbarNav`
+
+> `https://getbootstrap.com/docs/5.3/components/collapse/#methods`
+
+
+```js
+const bsCollapse = new bootstrap.Collapse('#navbarNav', {
+
+    toggle: false
+    // si pongo a TRUE la página al recargar va empesar con el navbar desplegado
+  })
+
+
+  /* le voy a agregar al documento el Evento Click pero yo no se lo quiero aplicar al document sinó a los enlaces
+    pero para no estar por cada enlace generando una invocación de evento mejor lo hago al padre (eso es la 
+    delegacion de eventos) 
+  */
+
+    /*  si el objeto que origina el evento 'e.target' su selector no coincide con el que estoy buscando
+        ¿que elementos Html estoy buscando? (.navbar) pues todo los enlaces (a) que estén dentro de la barra de navegación
+        
+        RESUMEN: el click no se va activar si no concide con esto: `.navbar a` cuando el elemento haga un click
+        y no concida con esto simpremente retorname un FALSE para que se salga del evento.
+    */
+  document.addEventListener("click", (e) => {
+    if (!e.target.matches(".navbar a"))return false;
+    //cuando si coincida
+    //en esta variable 'bsCollapse' ya tenemos el elemento Collapse, entonces ejecuta el método 'Hide'(está en la documentacion)
+    bsCollapse.hide();
+})
+```
+
+> Conclución: en un sitio multi-page tu no vas a tener problemas  pero cuando hagas un sitio One-page considera este 👆 bloque de contenido js para que cada vez que el usuario de click sobre alguno de los enlaces de tu menú el menú mobil se cierre.
+
+
+## Introducción a Hostinguer.
+
+
+
+
+
+
+
+
+
+
+
