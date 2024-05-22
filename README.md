@@ -1997,12 +1997,53 @@ const bsCollapse = new bootstrap.Collapse('#navbarNav', {
 
 > Conclución: en un sitio multi-page tu no vas a tener problemas  pero cuando hagas un sitio One-page considera este 👆 bloque de contenido js para que cada vez que el usuario de click sobre alguno de los enlaces de tu menú el menú mobil se cierre.
 
+> conclución: en version PC al seleccionar un elemento en el submenú, el submenú desplegable se cierra solo 
+
+![dropdown](/assets/dropdawn.JPG)
+
+> pero en version de movil no se cierra solo, lo intenté con JS pero se deforma todo como que el menú empuja al contenido. entonces. lo mejor que puedo hacer es hacer un indice separado en la página, así:
+
+> algo que noté es que si avanzas el contenido, el ménu desplegable ya no empuja el contenido. solo lo empujacuando no se avanzó el contenido, los demás indices si se empuja el contenido al abrir el menú. excepto el indice: "Tipos de sitio"
+
+
+![desplegable](/assets/desplegable.JPG)
+
+y evitar hacer submenús. 🤔🤔🤔
+
+> es bueno que al hacer click en un índice. este nos lleve a ese y se muestre en version mobil el nombre del indice o submenú.
+
+![indice-legible](/assets/subindice-legible.JPG)
 
 ## Introducción a Hostinguer.
 
+250 al año
+
+tiene acceso a GIT
+
+ascceso via SSH si prefieres tener el control de tu servidor desde la terminal
+
+contratamos un servicio de Hostinguer
+
+## Configurando un dominio en Hostinguer
+
+reclamamos nuestro dominio gratuito por que usamos el plan 'premiun' 
+
+registramos el dominio (pais, datos de contacto)
 
 
+## Configurando un servicio de hospedaje en Hostinguer
 
+los asistentes visuales muestra el progreso
+
+## Comprobando SSL(certificado) en Hostinguer
+
+cambiar el http => https desde el panel de control de hostinguer
+
+te vas a la seccion de SSL y lo activas, solo si no estubiera activo.
+
+## Subiendo sitio web a Hostinguer
+
+ES DRAGAN-DROP asi que carga los archivos tan solo jalarlo a la página.
 
 
 
